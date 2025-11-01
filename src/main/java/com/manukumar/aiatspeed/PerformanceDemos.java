@@ -15,7 +15,7 @@ public class PerformanceDemos {
     }
 
     public static void run() {
-        System.out.println("=== ⚙️ Java Performance Demos ===");
+        System.out.println("=== Java Performance Demos ===");
         System.out.println();
 
         cacheDemo();
@@ -33,9 +33,9 @@ public class PerformanceDemos {
 //        gcDemo();
     }
 
-    // 🧠 CPU Cache Demo
+    //  CPU Cache Demo
     static void cacheDemo() {
-        System.out.println("🧠 CPU Cache Demo");
+        System.out.println(" CPU Cache Demo");
         int N = 2048;
         int[][] matrix = new int[N][N];
 
@@ -58,12 +58,12 @@ public class PerformanceDemos {
         double diff = (colTime - rowTime) * 100.0 / rowTime;
         System.out.printf("Row-major access: %.2f ms%n", rowTime / 1_000_000.0);
         System.out.printf("Column-major access: %.2f ms%n", colTime / 1_000_000.0);
-        System.out.printf("⚠️  Column-major was %.1f%% slower%n", diff);
+        System.out.printf("Column-major was %.1f%% slower%n", diff);
     }
 
-    // 🔀 Branch Prediction Demo
+    //  Branch Prediction Demo
     static void branchPredictionDemo() {
-        System.out.println("🔀 Branch Prediction Demo");
+        System.out.println(" Branch Prediction Demo");
 
         int[] data = new int[SIZE];
         for (int i = 0; i < SIZE; i++)
@@ -91,15 +91,15 @@ public class PerformanceDemos {
         double ratio = (double) colTime / rowTime;
         System.out.printf("Predictable branches: %.2f ms%n", rowTime / 1_000_000.0);
         System.out.printf("Unpredictable branches: %.2f ms%n", colTime / 1_000_000.0);
-        System.out.printf("⚠️  Unpredictable branches are %.1f%% slower (%.2fx)%n",
+        System.out.printf("Unpredictable branches are %.1f%% slower (%.2fx)%n",
                 (ratio - 1) * 100, ratio);
 
         if (sum == 42) System.out.println("Magic!"); // avoid JIT elimination
     }
 
-    // ⚡ SIMD / Vector API Demo
+    //  SIMD / Vector API Demo
     static void vectorDemo() {
-        System.out.println("⚡ SIMD / Vector API Demo");
+        System.out.println(" SIMD / Vector API Demo");
         int size = 50_000_000;
         float[] a = new float[size];
         float[] b = new float[size];
@@ -148,9 +148,9 @@ public class PerformanceDemos {
         }
     }
 
-    // 🧩 JIT Optimization Demo
+    //  JIT Optimization Demo
     static void jitDemo() {
-        System.out.println("🧩 JIT Optimization Demo");
+        System.out.println(" JIT Optimization Demo");
         long start, end;
 
         // Before JIT warm-up
@@ -168,7 +168,7 @@ public class PerformanceDemos {
 
         System.out.printf("First run: %.3f ms%n", firstRun);
         System.out.printf("After JIT warm-up: %.3f ms%n", secondRun);
-        System.out.printf("🚀 JIT made it %.1fx faster%n", firstRun / secondRun);
+        System.out.printf("JIT made it %.1fx faster%n", firstRun / secondRun);
     }
 
     static double slowFunction() {
@@ -179,9 +179,9 @@ public class PerformanceDemos {
         return sum;
     }
 
-    // ♻️ GC Demo
+    //  GC Demo
     static void gcDemo() {
-        System.out.println("♻️ Garbage Collector Demo");
+        System.out.println("Garbage Collector Demo");
         long start = System.nanoTime();
 
         for (int i = 0; i < 1000; i++) {
@@ -192,6 +192,6 @@ public class PerformanceDemos {
         long end = System.nanoTime();
         double duration = (end - start) / 1_000_000.0;
         System.out.printf("Mass allocation loop: %.2f ms%n", duration);
-        System.out.println("💡 You may notice minor pauses = GC in action!");
+        System.out.println(" You may notice minor pauses = GC in action!");
     }
 }

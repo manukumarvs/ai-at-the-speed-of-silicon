@@ -1,4 +1,4 @@
-package com.manukumar.aiatspeed.cosine;
+package com.javafest.aiatspeed.benchmark;
 
 import jdk.incubator.vector.FloatVector;
 import jdk.incubator.vector.VectorSpecies;

@@ -1,4 +1,4 @@
-package com.manukumar.aiatspeed.util;
+package com.javafest.aiatspeed.util;
 
 public class Timer {
     private long t;

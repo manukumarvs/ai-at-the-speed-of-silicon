@@ -1,4 +1,4 @@
-package com.manukumar.aiatspeed.cosine;
+package com.javafest.aiatspeed.benchmark;
 
 public class CosineSimilarityScalar {
     public static float cosine(float[] a, float[] b) {

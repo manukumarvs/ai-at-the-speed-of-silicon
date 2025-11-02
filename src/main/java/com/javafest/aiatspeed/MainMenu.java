@@ -1,23 +1,21 @@
-package com.manukumar.aiatspeed;
+package com.javafest.aiatspeed;
 
-import com.manukumar.aiatspeed.vector.DotProductVectorDemo;
-import com.manukumar.aiatspeed.cosine.CosineSimilarityComparison;
-import com.manukumar.aiatspeed.vector.VectorPerformanceDemo;
-import com.manukumar.aiatspeed.cosine.CosineSimilarityDemo;
-import com.manukumar.aiatspeed.jitgc.JitWarmupDemo;
-import com.manukumar.aiatspeed.jitgc.GcPauseDemo;
+import com.javafest.aiatspeed.vector.DotProductVectorDemo;
+import com.javafest.aiatspeed.cosine.CosineSimilarityComparison;
+import com.javafest.aiatspeed.vector.VectorPerformanceDemo;
+import com.javafest.aiatspeed.cosine.CosineSimilarityDemo;
 
 public class MainMenu {
     void main() {
         IO.println("""
-        === AI at the Speed of Silicon — Demos ===
-         1) Run All Performance Demos
-         2) Dot-product (scalar vs vector)
-         3) Vector Performance (scalar vs vector)
-         4) Cosine Similarity Comparison Demo (scalar vs vector)
-         5) CosineSimilarity Demo
-         6) Exit
-        """);
+                === AI at the Speed of Silicon — Demos ===
+                 1) Run All Performance Demos
+                 2) Dot-product (scalar vs vector)
+                 3) Vector Performance (scalar vs vector)
+                 4) Cosine Similarity Comparison Demo (scalar vs vector)
+                 5) CosineSimilarity Demo
+                 6) Exit
+                """);
         while (true) {
             String line = IO.readln("Choose demo [1-6]: ");
             if (line == null) return;

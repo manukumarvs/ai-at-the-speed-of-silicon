@@ -1,4 +1,4 @@
-package com.manukumar.aiatspeed.cosine;
+package com.javafest.aiatspeed.cosine;
 
 import java.util.*;
 import java.util.stream.IntStream;

@@ -1,7 +1,5 @@
-package com.manukumar.aiatspeed.benchmark;
+package com.javafest.aiatspeed.benchmark;
 
-import com.manukumar.aiatspeed.cosine.CosineSimilarityScalar;
-import com.manukumar.aiatspeed.cosine.CosineSimilarityVector;
 import org.openjdk.jmh.annotations.*;
 import java.util.concurrent.TimeUnit;
 

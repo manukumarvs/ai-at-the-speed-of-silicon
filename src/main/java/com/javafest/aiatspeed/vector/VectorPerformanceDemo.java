@@ -1,4 +1,4 @@
-package com.manukumar.aiatspeed.vector;
+package com.javafest.aiatspeed.vector;
 
 import java.util.Random;
 

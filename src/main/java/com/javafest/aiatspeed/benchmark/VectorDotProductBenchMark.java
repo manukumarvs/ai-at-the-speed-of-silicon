@@ -1,4 +1,4 @@
-package com.manukumar.aiatspeed.benchmark;
+package com.javafest.aiatspeed.benchmark;
 
 import org.openjdk.jmh.annotations.*;
 import module jdk.incubator.vector;
@@ -9,7 +9,7 @@ import java.util.Random;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
-public class VectorDotProductBench {
+public class VectorDotProductBenchMark {
 
     @Param({"10000"})
     public int size;

@@ -17,6 +17,9 @@ We are using incubator modules here(Vector), so we need to add --add-modules jdk
 ### If you are running using IntelliJ/Eclipse
       Use latest IntelliJ/Eclipse as JDK 25 might not be recognized in older versions
       We recommend IntelliJ IDEA 2025.2.* versions
+      For Eclipse:
+            Version: 2025-09 (4.37.0) or above
+            Go to Eclipse Marketplace: You can install the "Java 25 Support for Eclipse 2025-09 (4.37)" feature directly from the marketplace within the IDE by going to Help > Eclipse     Marketplace... and searching for it.
       Add --add-modules jdk.incubator.vector as VM params
       Run your java code
 ### If you are running using Maven

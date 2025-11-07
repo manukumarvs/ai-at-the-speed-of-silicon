@@ -12,8 +12,11 @@ Repository contains SIMD & Vector API demos, JMH benchmarks, and JVM behavior de
 ## How to run
 We are using incubator modules here(Vector), so we need to add --add-modules jdk.incubator.vector as VM params for running the java code.
 ### If you are running from a terminal
-      java --add-modules jdk.incubator.vector src/main/java/com/javafest/aiatspeed/MainMenu.java
-### If you are running using IntelliJ
+      javac --add-modules jdk.incubator.vector src/main/java/com/javafest/aiatspeed/vector/DotProductVectorDemo.java
+      java --add-modules jdk.incubator.vector src/main/java/com/javafest/aiatspeed/vector/DotProductVectorDemo
+### If you are running using IntelliJ/Eclipse
+      Use latest IntelliJ/Eclipse as JDK 25 might not be recognized in older versions
+      We recommend IntelliJ IDEA 2025.2.* versions
       Add --add-modules jdk.incubator.vector as VM params
       Run your java code
 ### If you are running using Maven

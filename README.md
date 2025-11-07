@@ -1,6 +1,5 @@
 # AI at the Speed of Silicon
-Repository created for Javafest demo
-SIMD & Vector API demos, JMH benchmarks, and JVM behavior for JavaFest.
+Repository contains SIMD & Vector API demos, JMH benchmarks, and JVM behavior demos for JavaFest.
 
 ## Prerequisites
 - JDK 25 (set JAVA_HOME)
@@ -20,6 +19,14 @@ We are using incubator modules here(Vector), so we need to add --add-modules jdk
 ### If you are running using Maven
       mvn clean package
       java --add-modules jdk.incubator.vector -jar target/ai-at-the-speed-of-silicon-1.0-SNAPSHOT.jar
+
+## Try with different flags
+Try with some of these flags to see the difference.
+- -XX:-UseSuperWord
+- -XX:+UseStringDeduplication -XX:+PrintStringDeduplicationStatistics
+- -XX:+UnlockDiagnosticVMOptions -XX:+PrintIntrinsics
+- -XX:+PrintCompilation
+
 
 
 

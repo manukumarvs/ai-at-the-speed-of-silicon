@@ -20,7 +20,7 @@ public class MainMenu {
             String line = IO.readln("Choose demo [1-6]: ");
             if (line == null) return;
             switch (line.trim()) {
-                case "1" -> PerformanceDemos.run();
+//                case "1" -> PerformanceDemos.run();
                 case "2" -> DotProductVectorDemo.run();
                 case "3" -> VectorPerformanceDemo.run();
                 case "4" -> CosineSimilarityComparison.run();

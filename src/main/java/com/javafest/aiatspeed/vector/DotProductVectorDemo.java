@@ -1,7 +1,5 @@
 package com.javafest.aiatspeed.vector;
 
-import com.javafest.aiatspeed.util.Timer;
-
 import module jdk.incubator.vector;
 
 import java.util.Random;
@@ -14,7 +12,7 @@ public class DotProductVectorDemo {
     /**
      * The size of the float arrays used for the dot product computation.
      */
-    private static final int SIZE = 40_000_000;
+    private static final int SIZE = 40_000_000;//40M
 
     /**
      * The preferred vector species for FloatVector operations.
@@ -41,7 +39,7 @@ public class DotProductVectorDemo {
         scalarDot(a,b);
         vectorDot(a,b);
 
-        Timer t = new Timer();
+        NoTimer t = new NoTimer();
         float s1 = scalarDot(a,b);
         System.out.printf("Scalar dot: %d ms (result %.3f)%n", t.elapsedMillis(), s1);
 
@@ -86,4 +84,10 @@ public class DotProductVectorDemo {
         for (; i < a.length; i++) sum += a[i] * b[i];
         return sum;
     }
+}
+class NoTimer {
+    private long t;
+    public NoTimer() { t = System.nanoTime(); }
+    public long elapsedMillis() { return (System.nanoTime() - t) / 1_000_000; }
+    public void reset() { t = System.nanoTime(); }
 }

@@ -18,7 +18,7 @@ public class PerformanceDemos {
         System.out.println("=== Java Performance Demos ===");
         System.out.println();
 
-        cacheDemo();
+//        cacheDemo();
         System.out.println();
 
 //        branchPredictionDemo();

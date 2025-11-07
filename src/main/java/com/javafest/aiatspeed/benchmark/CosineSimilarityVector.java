@@ -33,14 +33,15 @@ public class CosineSimilarityVector {
     }
 
     public static void main(String[] args) {
-        int n = 10_000_000;
+        int n = 10_000_000_00;
         float[] a = new float[n];
         float[] b = new float[n];
         java.util.Random r = new java.util.Random(123);
         for (int i = 0; i < n; i++) { a[i] = r.nextFloat(); b[i] = r.nextFloat(); }
 
         // warmup
-        float res = cosine(a,b);
+        float res ;
+//                = cosine(a,b);
 
         long t0 = System.nanoTime();
         res = cosine(a,b);

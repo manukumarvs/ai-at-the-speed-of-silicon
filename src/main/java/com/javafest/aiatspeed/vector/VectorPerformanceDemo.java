@@ -6,8 +6,10 @@ import jdk.incubator.vector.FloatVector;
 import jdk.incubator.vector.VectorSpecies;
 
 public class VectorPerformanceDemo {
-
-    private static final int SIZE = 50_000_000;
+    private static VectorSpecies<Float> SPECIES = FloatVector.SPECIES_PREFERRED;
+//private static VectorSpecies<Float> SPECIES = FloatVector.SPECIES_256;
+    private static final int SIZE = 50_000_004;//50M
+    public static final int  LOOP_BOUND = SPECIES.loopBound(SIZE);
     private static final float[] a = new float[SIZE];
     private static final float[] b = new float[SIZE];
     private static final float[] c = new float[SIZE];
@@ -25,17 +27,18 @@ public class VectorPerformanceDemo {
     }
 
     public static void run() {
+        System.out.println("Preferred = "+FloatVector.SPECIES_PREFERRED.vectorBitSize()+" bits, Loop bound = "+LOOP_BOUND);
         // Warm-up runs to trigger JIT compilation
         for (int i = 0; i < 3; i++) {
-            normalAdd();
-            vectorAdd();
+            scalarOperation();
+            vectorOperation();
         }
 
         // Measure scalar version
         long start = System.nanoTime();
-        normalAdd();
+        scalarOperation();
         long mid = System.nanoTime();
-        vectorAdd();
+        vectorOperation();
         long end = System.nanoTime();
 
         System.out.printf("Normal loop: %.2f ms%n", (mid - start) / 1_000_000.0);
@@ -43,7 +46,7 @@ public class VectorPerformanceDemo {
     }
 
 
-    static void normalAdd() {
+    static void scalarOperation() {
         for (int i = 0; i < SIZE; i++) {
             // Heavier math to make compute cost visible
             float x = a[i];
@@ -52,10 +55,10 @@ public class VectorPerformanceDemo {
         }
     }
 
-    static void vectorAdd() {
-        VectorSpecies<Float> SPECIES = FloatVector.SPECIES_PREFERRED;
+    static void vectorOperation() {
+
         int i = 0;
-        for (; i < SPECIES.loopBound(SIZE); i += SPECIES.length()) {
+        for (; i < LOOP_BOUND; i += SPECIES.length()) {
             FloatVector va = FloatVector.fromArray(SPECIES, a, i);
             FloatVector vb = FloatVector.fromArray(SPECIES, b, i);
 

@@ -37,8 +37,8 @@ public class GoodVectorAndThreadDemo {
         System.out.println(
                 "Using " + SPECIES.length() + "-lane SIMD vectors\n");
 
-//        runBenchmarks("Scalar (Single Core, No SIMD)", () -> addScalar(a, b,
-//                result1));
+        runBenchmarks("Scalar (Single Core, No SIMD)", () -> addScalar(a, b,
+                result1));
         System.out.println("Scalar result = " + result1[320000]);
         System.out.println("Scalar result = " + result1[680000]);
         runBenchmarks("Vectorized (Single Core, SIMD)", () -> addVector(a, b,
